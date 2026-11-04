@@ -1,9 +1,11 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { buildRow, checkManual, lastDoneDay, ledgerHeader, num, parseCsv, stageOf } from '../scripts/metrics-export.mjs'
 
 const ROOT = join(import.meta.dirname, '..', '..')
+// The ledger header lives in the operator's session tooling, outside this repository; skip where it is absent.
+const DIGEST = join(ROOT, 'scripts', 'p1_digest.py')
 
 const snap = {
   day: '2026-11-16',
@@ -30,8 +32,8 @@ const snap = {
 }
 
 describe('metrics ledger export', () => {
-  it('reads the fixed header from scripts/p1_digest.py', () => {
-    const h = ledgerHeader(readFileSync(join(ROOT, 'scripts', 'p1_digest.py'), 'utf8'))
+  it.skipIf(!existsSync(DIGEST))('reads the fixed header from scripts/p1_digest.py', () => {
+    const h = ledgerHeader(readFileSync(DIGEST, 'utf8'))
     expect(h).toBe(
       'date,stage,signups_total,signups_new,votes_new,polls_new,weekly_return_rate,search_clicks_google,search_clicks_naver,promo_spend_krw,llm_cost_usd,idv_cost_krw,shares_new,embed_loads_new,invited_signups_new,maker_votes_new,refusals_new,notes',
     )
