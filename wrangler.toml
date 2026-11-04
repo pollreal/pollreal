@@ -1,0 +1,55 @@
+# Versus — Cloudflare Workers config.
+# Local dev:  npm run db:migrate:local && npm run dev   (APP_ENV=development opens the mock login / mock identity routes)
+# Production: secrets only via `wrangler secret put HMAC_PEPPER` — never in this file (house rule).
+name = "versus"
+main = "src/index.tsx"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"] # @cloudflare/puppeteer (card deep pass)
+# Production domain (custom domain on the pollreal.com zone, same Cloudflare account). Top-level key — must stay above [vars].
+routes = [{ pattern = "pollreal.com", custom_domain = true }, { pattern = "www.pollreal.com", custom_domain = true }] # www answers only a 301 to pollreal.com
+# Only pollreal.com serves the site (passkeys are bound to it); no *.workers.dev copy, no preview URLs.
+workers_dev = false
+preview_urls = false
+
+# Static files served before the Worker runs: the self-hosted web fonts (scripts/copy-fonts.mjs).
+[assets]
+directory = "./public"
+
+[vars]
+APP_ENV = "production"
+# Public origin = passkey relying-party id. Changing it after launch invalidates every passkey. `npm run dev` overrides it.
+SITE_URL = "https://pollreal.com"
+# Pre-launch gate (house rule): "1" = holding page for the public until the launch gates pass; the real site opens
+# only through /preview/<PREVIEW_KEY secret>. Set to "0" (and redeploy) on launch day.
+PRELAUNCH = "0" # opened 2026-11-04 (operator)
+# verification codes through Google Identity Platform only (key = secret FIREBASE_API_KEY). Twilio removed 2026-11-04.
+SMS_PROVIDER = "firebase"
+# Bot check (step 7): public site key of the Turnstile widget for the production domain (set at deploy, step 10).
+# The secret goes in with `wrangler secret put TURNSTILE_SECRET_KEY`. Empty = forms refuse in production (fail closed).
+TURNSTILE_SITE_KEY = "0x4AAAAAAFrLbcXdACVa9YiR" # widget "Pollreal", hostname pollreal.com, managed (2026-10-29)
+
+# Operator alert mail (operator 2026-11-04): when a daily SMS cap is reached, mail the operator once per day. Sent through Email
+# Routing (pollreal.com) to its verified destination — the binding can only send there.
+[[send_email]]
+name = "ALERT_MAIL" # destination = secret ALERT_TO (a verified Email Routing address)
+
+# Real headless browser for the card deep pass (pages that render only with script). remote = true lets `npm run dev`
+# use Cloudflare's browser (local mode has none); ignored on deploy. Workers Paid: 10 browser hours/month included.
+[browser]
+binding = "BROWSER"
+remote = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "versus-db"
+database_id = "c661771c-f9aa-4663-b5d3-21d3b9bca505" # production, region APAC (created 2026-10-29)
+migrations_dir = "migrations"
+
+[triggers]
+# Close expired polls, purge expired sessions and 30-day-old withdrawn identity hashes, retry waiting AI cards,
+# review voting patterns (step 7) and snapshot finished KST days for the metrics ledger (step 8).
+crons = ["*/5 * * * *"]
+
+# Keep worker logs (console.warn) so failed sign-ins can be diagnosed after the fact.
+[observability]
+enabled = true

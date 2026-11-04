@@ -1,0 +1,7 @@
+# Copy to .dev.vars for optional local keys (never commit .dev.vars). Everything works without them in development.
+# AI comparison cards (Anthropic API key)
+ANTHROPIC_API_KEY=
+# Real SMS codes through Google Identity Platform (Firebase phone auth)
+FIREBASE_API_KEY=
+# Optional: production-style thresholds for local experiments, JSON {"otp":{...},"anomaly":{...},"blockedAsns":[...]}
+PRIVATE_LIMITS=

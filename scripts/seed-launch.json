@@ -1,0 +1,725 @@
+[
+  {
+    "batch": 1,
+    "category": "ai-assistants",
+    "question": "Which AI assistant do you actually use for everyday work?",
+    "candidates": [
+      {
+        "maker": "OpenAI",
+        "product": "ChatGPT",
+        "url": "https://chatgpt.com/pricing/"
+      },
+      {
+        "maker": "Anthropic",
+        "product": "Claude",
+        "url": "https://claude.com/pricing"
+      },
+      {
+        "maker": "Google",
+        "product": "Gemini",
+        "url": "https://gemini.google/subscriptions/"
+      },
+      {
+        "maker": "xAI",
+        "product": "Grok",
+        "url": "https://x.ai/grok"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-coding",
+    "question": "Which AI code editor would you use for daily work?",
+    "candidates": [
+      {
+        "maker": "Anysphere",
+        "product": "Cursor",
+        "url": "https://cursor.com/pricing"
+      },
+      {
+        "maker": "GitHub",
+        "product": "Copilot",
+        "url": "https://github.com/features/copilot/plans"
+      },
+      {
+        "maker": "Cognition",
+        "product": "Devin Desktop",
+        "url": "https://devin.ai/desktop"
+      },
+      {
+        "maker": "Zed Industries",
+        "product": "Zed",
+        "url": "https://zed.dev/pricing"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-coding",
+    "question": "Which terminal coding agent do you trust with a real task?",
+    "candidates": [
+      {
+        "maker": "Anthropic",
+        "product": "Claude Code",
+        "url": "https://claude.com/product/claude-code"
+      },
+      {
+        "maker": "OpenAI",
+        "product": "Codex",
+        "url": "https://learn.chatgpt.com/docs/pricing"
+      },
+      {
+        "maker": "Google",
+        "product": "Gemini CLI",
+        "url": "https://geminicli.com/"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-image",
+    "question": "Which image generator would you use for marketing visuals?",
+    "candidates": [
+      {
+        "maker": "Midjourney",
+        "product": "Midjourney",
+        "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+      },
+      {
+        "maker": "Black Forest Labs",
+        "product": "FLUX",
+        "url": "https://bfl.ai/pricing"
+      },
+      {
+        "maker": "OpenAI",
+        "product": "GPT Image",
+        "url": "https://developers.openai.com/api/docs/pricing"
+      },
+      {
+        "maker": "Google",
+        "product": "Nano Banana",
+        "url": "https://gemini.google/overview/image-generation/"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-video",
+    "question": "Which video generator for a short clip from a text prompt?",
+    "candidates": [
+      {
+        "maker": "Google",
+        "product": "Veo",
+        "url": "https://deepmind.google/models/veo/"
+      },
+      {
+        "maker": "Runway",
+        "product": "Gen-4.5",
+        "url": "https://runway.com/pricing"
+      },
+      {
+        "maker": "Kling AI",
+        "product": "Kling",
+        "url": "https://kling.ai/"
+      },
+      {
+        "maker": "Luma AI",
+        "product": "Ray3",
+        "url": "https://lumalabs.ai/pricing"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-audio",
+    "question": "Which tool for making a full song from a text prompt?",
+    "candidates": [
+      {
+        "maker": "Suno",
+        "product": "Suno",
+        "url": "https://suno.com/pricing"
+      },
+      {
+        "maker": "Udio",
+        "product": "Udio",
+        "url": "https://help.udio.com/en/articles/10739134-credits-and-credit-limits"
+      },
+      {
+        "maker": "ElevenLabs",
+        "product": "ElevenMusic",
+        "url": "https://elevenlabs.io/music"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-search",
+    "question": "Which do you reach for first when you need an answer from the web?",
+    "candidates": [
+      {
+        "maker": "Perplexity",
+        "product": "Perplexity",
+        "url": "https://www.perplexity.ai/pro"
+      },
+      {
+        "maker": "Google",
+        "product": "AI Mode",
+        "url": "https://search.google/ways-to-search/ai-mode/"
+      },
+      {
+        "maker": "OpenAI",
+        "product": "ChatGPT",
+        "url": "https://chatgpt.com/pricing/"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-opensource",
+    "question": "Which open-weight model family do you deploy?",
+    "candidates": [
+      {
+        "maker": "Meta",
+        "product": "Llama",
+        "url": "https://dev.meta.ai/"
+      },
+      {
+        "maker": "DeepSeek",
+        "product": "DeepSeek",
+        "url": "https://www.deepseek.com/"
+      },
+      {
+        "maker": "Alibaba Cloud",
+        "product": "Qwen",
+        "url": "https://qwen.ai/"
+      },
+      {
+        "maker": "Mistral AI",
+        "product": "Mistral",
+        "url": "https://mistral.ai/pricing/"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "ai-apps",
+    "question": "Which AI browser would you switch to?",
+    "candidates": [
+      {
+        "maker": "Perplexity",
+        "product": "Comet",
+        "url": "https://www.perplexity.ai/comet"
+      },
+      {
+        "maker": "The Browser Company",
+        "product": "Dia",
+        "url": "https://www.diabrowser.com/"
+      },
+      {
+        "maker": "Google",
+        "product": "Chrome",
+        "url": "https://www.google.com/chrome/"
+      }
+    ]
+  },
+  {
+    "batch": 1,
+    "category": "phone",
+    "question": "Which phone has the AI features you would actually use?",
+    "candidates": [
+      {
+        "maker": "Apple",
+        "product": "iPhone",
+        "url": "https://www.apple.com/iphone/compare/"
+      },
+      {
+        "maker": "Google",
+        "product": "Pixel",
+        "url": "https://store.google.com/us/category/phones?hl=en-US"
+      },
+      {
+        "maker": "Samsung",
+        "product": "Galaxy S",
+        "url": "https://www.samsung.com/us/smartphones/galaxy-s26-ultra/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-editor",
+    "question": "Which editor do you actually write code in?",
+    "candidates": [
+      {
+        "maker": "Microsoft",
+        "product": "VS Code",
+        "url": "https://code.visualstudio.com/"
+      },
+      {
+        "maker": "Vim",
+        "product": "Vim",
+        "url": "https://www.vim.org/"
+      },
+      {
+        "maker": "Neovim",
+        "product": "Neovim",
+        "url": "https://neovim.io/"
+      },
+      {
+        "maker": "GNU",
+        "product": "Emacs",
+        "url": "https://www.gnu.org/software/emacs/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-os",
+    "question": "Which operating system would you pick for your main machine?",
+    "candidates": [
+      {
+        "maker": "Apple",
+        "product": "macOS",
+        "url": "https://www.apple.com/os/macos/"
+      },
+      {
+        "maker": "Microsoft",
+        "product": "Windows 11",
+        "url": "https://www.microsoft.com/en-us/windows/windows-11"
+      },
+      {
+        "maker": "Canonical",
+        "product": "Ubuntu",
+        "url": "https://ubuntu.com/desktop"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-framework",
+    "question": "Starting a new web app today: which front-end framework?",
+    "candidates": [
+      {
+        "maker": "Meta",
+        "product": "React",
+        "url": "https://react.dev/"
+      },
+      {
+        "maker": "Vue.js",
+        "product": "Vue",
+        "url": "https://vuejs.org/"
+      },
+      {
+        "maker": "Svelte",
+        "product": "Svelte",
+        "url": "https://svelte.dev/"
+      },
+      {
+        "maker": "Google",
+        "product": "Angular",
+        "url": "https://angular.dev/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-language",
+    "question": "If you could only use one language for the next five years?",
+    "candidates": [
+      {
+        "maker": "Python Software Foundation",
+        "product": "Python",
+        "url": "https://www.python.org/"
+      },
+      {
+        "maker": "Microsoft",
+        "product": "TypeScript",
+        "url": "https://www.typescriptlang.org/"
+      },
+      {
+        "maker": "Rust Foundation",
+        "product": "Rust",
+        "url": "https://www.rust-lang.org/"
+      },
+      {
+        "maker": "Google",
+        "product": "Go",
+        "url": "https://go.dev/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-cloud",
+    "question": "Where would you host your next project?",
+    "candidates": [
+      {
+        "maker": "Amazon",
+        "product": "AWS"
+      },
+      {
+        "maker": "Microsoft",
+        "product": "Azure",
+        "url": "https://azure.microsoft.com/"
+      },
+      {
+        "maker": "Google",
+        "product": "Google Cloud",
+        "url": "https://cloud.google.com/"
+      },
+      {
+        "maker": "Hetzner",
+        "product": "Hetzner Cloud",
+        "url": "https://www.hetzner.com/cloud"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-database",
+    "question": "Which database would you bet a new product on?",
+    "candidates": [
+      {
+        "maker": "PostgreSQL",
+        "product": "PostgreSQL",
+        "url": "https://www.postgresql.org/"
+      },
+      {
+        "maker": "Oracle",
+        "product": "MySQL",
+        "url": "https://www.mysql.com/"
+      },
+      {
+        "maker": "MongoDB",
+        "product": "MongoDB",
+        "url": "https://www.mongodb.com/"
+      },
+      {
+        "maker": "SQLite",
+        "product": "SQLite",
+        "url": "https://www.sqlite.org/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-terminal",
+    "question": "Which terminal lives in your dock?",
+    "candidates": [
+      {
+        "maker": "Ghostty",
+        "product": "Ghostty",
+        "url": "https://ghostty.org/"
+      },
+      {
+        "maker": "Warp",
+        "product": "Warp",
+        "url": "https://www.warp.dev/"
+      },
+      {
+        "maker": "iTerm2",
+        "product": "iTerm2",
+        "url": "https://iterm2.com/"
+      },
+      {
+        "maker": "WezTerm",
+        "product": "WezTerm",
+        "url": "https://wezterm.org/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-browser",
+    "question": "Which browser is your default?",
+    "candidates": [
+      {
+        "maker": "Google",
+        "product": "Chrome",
+        "url": "https://www.google.com/chrome/"
+      },
+      {
+        "maker": "Apple",
+        "product": "Safari",
+        "url": "https://www.apple.com/safari/"
+      },
+      {
+        "maker": "Mozilla",
+        "product": "Firefox",
+        "url": "https://www.mozilla.org/firefox/"
+      },
+      {
+        "maker": "Brave",
+        "product": "Brave",
+        "url": "https://brave.com/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "sw-framework",
+    "question": "Which JavaScript runtime would you start a server on today?",
+    "candidates": [
+      {
+        "maker": "OpenJS Foundation",
+        "product": "Node.js",
+        "url": "https://nodejs.org/"
+      },
+      {
+        "maker": "Oven",
+        "product": "Bun",
+        "url": "https://bun.sh/"
+      },
+      {
+        "maker": "Deno",
+        "product": "Deno",
+        "url": "https://deno.com/"
+      }
+    ]
+  },
+  {
+    "batch": 2,
+    "category": "gaming",
+    "question": "One console this holiday season: which one?",
+    "candidates": [
+      {
+        "maker": "Sony",
+        "product": "PlayStation 5",
+        "url": "https://www.playstation.com/en-us/ps5/"
+      },
+      {
+        "maker": "Microsoft",
+        "product": "Xbox Series X|S",
+        "url": "https://www.xbox.com/en-US/consoles"
+      },
+      {
+        "maker": "Nintendo",
+        "product": "Switch 2",
+        "url": "https://www.nintendo.com/us/gaming-systems/switch-2/"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "sw-notes",
+    "question": "Where do your notes actually live?",
+    "candidates": [
+      {
+        "maker": "Notion",
+        "product": "Notion",
+        "url": "https://www.notion.com/"
+      },
+      {
+        "maker": "Obsidian",
+        "product": "Obsidian",
+        "url": "https://obsidian.md/"
+      },
+      {
+        "maker": "Apple",
+        "product": "Notes",
+        "url": "https://support.apple.com/guide/notes/welcome/mac"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "sw-chat",
+    "question": "Which chat app would you run a team on?",
+    "candidates": [
+      {
+        "maker": "Slack",
+        "product": "Slack",
+        "url": "https://slack.com/"
+      },
+      {
+        "maker": "Discord",
+        "product": "Discord",
+        "url": "https://discord.com/"
+      },
+      {
+        "maker": "Microsoft",
+        "product": "Teams",
+        "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "sw-streaming",
+    "question": "One music subscription: which one stays?",
+    "candidates": [
+      {
+        "maker": "Spotify",
+        "product": "Spotify Premium",
+        "url": "https://www.spotify.com/us/premium/"
+      },
+      {
+        "maker": "Apple",
+        "product": "Apple Music",
+        "url": "https://www.apple.com/apple-music/"
+      },
+      {
+        "maker": "Google",
+        "product": "YouTube Music"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "pc",
+    "question": "Building a PC today: whose graphics card goes in?",
+    "candidates": [
+      {
+        "maker": "NVIDIA",
+        "product": "GeForce RTX 50 Series",
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/"
+      },
+      {
+        "maker": "AMD",
+        "product": "Radeon RX 9000 Series",
+        "url": "https://www.amd.com/en/products/graphics/desktops/radeon.html"
+      },
+      {
+        "maker": "Intel",
+        "product": "Arc",
+        "url": "https://www.intel.com/content/www/us/en/products/details/discrete-gpus/arc.html"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "car",
+    "question": "Which electric sedan would you actually buy?",
+    "candidates": [
+      {
+        "maker": "Tesla",
+        "product": "Model 3",
+        "url": "https://www.tesla.com/model3"
+      },
+      {
+        "maker": "BYD",
+        "product": "Seal",
+        "url": "https://www.byd.com/eu/car/seal"
+      },
+      {
+        "maker": "Hyundai",
+        "product": "IONIQ 6",
+        "url": "https://www.hyundaiusa.com/us/en/vehicles/ioniq-6"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "fashion",
+    "question": "Which running shoe would you buy next?",
+    "candidates": [
+      {
+        "maker": "Nike",
+        "product": "Pegasus",
+        "url": "https://www.nike.com/w/pegasus-shoes-8nexhzy7ok"
+      },
+      {
+        "maker": "adidas",
+        "product": "Ultraboost",
+        "url": "https://www.adidas.com/us/ultraboost"
+      },
+      {
+        "maker": "New Balance",
+        "product": "Fresh Foam X 1080",
+        "url": "https://www.newbalance.com/"
+      },
+      {
+        "maker": "ASICS",
+        "product": "GEL-NIMBUS",
+        "url": "https://www.asics.com/us/en-us/gel-nimbus/"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "coffee",
+    "question": "The oldest rivalry: which cola?",
+    "candidates": [
+      {
+        "maker": "The Coca-Cola Company",
+        "product": "Coca-Cola",
+        "url": "https://www.coca-cola.com/us/en/brands/coca-cola"
+      },
+      {
+        "maker": "PepsiCo",
+        "product": "Pepsi",
+        "url": "https://www.pepsi.com/"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "wearable",
+    "question": "Which smartwatch stays on your wrist?",
+    "candidates": [
+      {
+        "maker": "Apple",
+        "product": "Apple Watch",
+        "url": "https://www.apple.com/watch/"
+      },
+      {
+        "maker": "Samsung",
+        "product": "Galaxy Watch",
+        "url": "https://www.samsung.com/us/watches/"
+      },
+      {
+        "maker": "Garmin",
+        "product": "Forerunner",
+        "url": "https://www.garmin.com/en-US/c/wearables-smartwatches/"
+      },
+      {
+        "maker": "Google",
+        "product": "Pixel Watch",
+        "url": "https://store.google.com/us/category/watches"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "printer",
+    "question": "Your next 3D printer?",
+    "candidates": [
+      {
+        "maker": "Bambu Lab",
+        "product": "P1S",
+        "url": "https://bambulab.com/en/p1"
+      },
+      {
+        "maker": "Prusa Research",
+        "product": "CORE One",
+        "url": "https://www.prusa3d.com/product/prusa-core-one/"
+      },
+      {
+        "maker": "Creality",
+        "product": "K2 Plus",
+        "url": "https://www.creality.com/"
+      }
+    ]
+  },
+  {
+    "batch": 3,
+    "category": "camera",
+    "question": "Which action camera goes on the trip?",
+    "candidates": [
+      {
+        "maker": "DJI",
+        "product": "Osmo Action 5 Pro",
+        "url": "https://www.dji.com/osmo-action-5-pro"
+      },
+      {
+        "maker": "GoPro",
+        "product": "HERO",
+        "url": "https://gopro.com/en/us/shop/cameras"
+      },
+      {
+        "maker": "Insta360",
+        "product": "X5",
+        "url": "https://www.insta360.com/product/insta360-x5"
+      }
+    ]
+  }
+]
