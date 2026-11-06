@@ -26,6 +26,19 @@ async function get(path, opts = {}) {
 // After launch (2026-11-04): `--launched` checks the open site instead of the holding page, and reads the Worker's
 // secret NAMES (never values) with `wrangler secret list` in place of the preview-only /preview-check probe.
 const LAUNCHED = process.argv.includes('--launched')
+
+// `--keys`: one cheap real call per production key through the operator probe (/ops/key-check, header x-ops-key =
+// secret OPS_KEY, stored outside the repo in %LOCALAPPDATA%\Pollreal\ops_key.txt). Prints statuses only, then exits.
+if (process.argv.includes('--keys')) {
+  const keyFile = join(process.env.LOCALAPPDATA ?? '', 'Pollreal', 'ops_key.txt')
+  const key = (process.env.OPS_KEY ?? (existsSync(keyFile) ? readFileSync(keyFile, 'utf8') : '')).trim()
+  if (!key) { console.error(`missing: set OPS_KEY or create ${keyFile}`); process.exit(1) }
+  const res = await fetch(BASE + '/ops/key-check' + (process.argv.includes('--alert') ? '?alert=1' : ''), { headers: { 'x-ops-key': key, 'user-agent': 'pollreal-launch-check' } })
+  const body = await res.json().catch(() => ({}))
+  console.log(JSON.stringify({ http: res.status, ...body }, null, 2))
+  const bad = res.status !== 200 || /REJECTED|FAILED|missing|unavailable/.test(JSON.stringify(body))
+  process.exit(bad ? 1 : 0)
+}
 let launchedProbe = null
 if (LAUNCHED) {
   const pub = await get('/')

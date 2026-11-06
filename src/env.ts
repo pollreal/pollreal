@@ -30,6 +30,8 @@ export type Bindings = {
   // Open development (2026-11-05): production-only values kept out of the public code.
   PRIVATE_LIMITS?: string // JSON — abuse thresholds and the full blocked-network list (src/config.ts applyPrivateLimits)
   OPERATOR?: string // JSON — { rep: {en,ko}, address: {en,ko} } shown in the legal documents
+  // Operator key-check probe (/ops/key-check): one cheap real call per external key, statuses only, never values.
+  OPS_KEY?: string
 }
 
 export type Member = {

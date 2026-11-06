@@ -93,6 +93,42 @@ app.use('*', async (c, next) => {
   }
   return next()
 })
+// ---- operator probe: are the production keys still accepted by their vendors? ----
+// Header x-ops-key must equal the OPS_KEY secret; otherwise 404 like any unknown path. One cheap real call per
+// external key (Anthropic models list, Turnstile siteverify with a dummy token, Google Identity Platform reCAPTCHA
+// setup). Returns statuses only — never a value. Used after key rotations (scripts/launch-check.mjs --keys).
+app.get('/ops/key-check', async (c) => {
+  const given = (c.req.header('x-ops-key') ?? '').trim()
+  const want = (c.env.OPS_KEY ?? '').trim() // a secret put from a pipe may carry a trailing newline
+  if (!want || !given || !safeEqual(given, want)) return c.text('Not found', 404)
+  const anthropic = async () => {
+    if (!c.env.ANTHROPIC_API_KEY) return 'missing'
+    try {
+      const r = await fetch('https://api.anthropic.com/v1/models?limit=1', {
+        headers: { 'x-api-key': c.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
+        signal: AbortSignal.timeout(8000),
+      })
+      return r.status === 200 ? 'ok (200)' : `REJECTED (${r.status})`
+    } catch (e) {
+      return `unavailable (${String(e).slice(0, 60)})`
+    }
+  }
+  // ?alert=1 also sends the operator one test mail (at most once per day — the alerts table dedupes).
+  const alertTest = c.req.query('alert') === '1' ? await alert.sendTest(c.env, Date.now()) : 'skipped'
+  return c.json({
+    checked_at: new Date().toISOString(),
+    anthropic: await anthropic(),
+    alert_mail: alertTest,
+    turnstile: await probeSecret(c.env),
+    sms: await phone.firebaseCheck(c.env),
+    resend: c.env.RESEND_API_KEY ? 'set (not probed)' : 'not set (maker claims off)',
+    hmac_pepper: c.env.HMAC_PEPPER ? 'set' : 'missing',
+    private_limits: c.env.PRIVATE_LIMITS ? 'set' : 'missing',
+    operator: c.env.OPERATOR ? 'set' : 'missing',
+    alert_to: c.env.ALERT_TO ? 'set' : 'missing',
+  })
+})
+
 // ---- pre-launch gate (house rule: nothing is public before the launch gates pass) ----
 // PRELAUNCH = "1" (wrangler.toml var) → every page answers a noindex holding page, robots.txt disallows everything, the
 // image/embed/API routes answer 503 — unless the visitor holds the preview cookie, set by /preview/<PREVIEW_KEY>.
